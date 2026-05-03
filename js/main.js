@@ -84,14 +84,6 @@ function initFaqAccordion() {
 /* ============================================================
    FORM SUBMISSION WITH ERROR HANDLING
    ============================================================ */
-function encode(data) {
-  return Object.keys(data)
-    .map(function(key) {
-      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
-    })
-    .join('&');
-}
-
 function initForms() {
   var forms = document.querySelectorAll('form[data-netlify]');
 

@@ -8,6 +8,11 @@
   <meta name="description" content="We received your property information. Expect a call from our team within 24 hours.">
   <meta name="robots" content="noindex, nofollow">
 
+  <!-- Canonical & Favicons -->
+  <link rel="canonical" href="https://www.milehighquickhomes.com/thank-you.html">
+  <link rel="icon"             type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon"                  href="/images/apple-touch-icon.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,6 +120,7 @@
 
 <body>
 
+  <main>
   <div class="thankyou-page">
 
     <div class="thankyou-icon" aria-hidden="true">🏡</div>
@@ -146,20 +152,9 @@
     </div>
 
   </div>
+  </main>
 
-  <script>
-    var copyBtn = document.getElementById('copy-link');
-    if (copyBtn && navigator.clipboard) {
-      copyBtn.addEventListener('click', function() {
-        navigator.clipboard.writeText('https://www.milehighquickhomes.com/').then(function() {
-          copyBtn.textContent = '✓ Link copied!';
-          setTimeout(function() { copyBtn.textContent = '📋 Copy our link to share'; }, 2500);
-        });
-      });
-    } else if (copyBtn) {
-      copyBtn.style.display = 'none';
-    }
-  </script>
+  <script src="js/thank-you.js"></script>
 
 </body>
 </html>
