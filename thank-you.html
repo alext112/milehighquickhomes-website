@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Thank You | Mile High Quick Homes</title>
+  <meta name="description" content="We received your property information. Expect a call from our team within 24 hours.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    .thankyou-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-8);
+      background: linear-gradient(150deg, #0d2240 0%, #1E3A5F 60%, #1a4a8a 100%);
+      text-align: center;
+      color: white;
+    }
+
+    .thankyou-icon {
+      font-size: 4rem;
+      margin-bottom: var(--space-6);
+    }
+
+    .thankyou-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      color: white;
+      margin-bottom: var(--space-4);
+      line-height: 1.2;
+    }
+
+    @media (min-width: 768px) {
+      .thankyou-title {
+        font-size: var(--text-5xl);
+      }
+    }
+
+    .thankyou-body {
+      font-size: var(--text-lg);
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: var(--space-10);
+    }
+
+    .thankyou-cta {
+      margin-bottom: var(--space-8);
+    }
+
+    .thankyou-cta p {
+      font-size: var(--text-base);
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: var(--space-3);
+    }
+
+    .thankyou-share {
+      margin-top: var(--space-8);
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .thankyou-share p {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: var(--space-3);
+    }
+
+    .copy-link-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: white;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: background-color var(--transition);
+    }
+
+    .copy-link-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .thankyou-back {
+      margin-top: var(--space-8);
+    }
+
+    .thankyou-back a {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: underline;
+    }
+
+    .thankyou-back a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="thankyou-page">
+
+    <div class="thankyou-icon" aria-hidden="true">🏡</div>
+
+    <h1 class="thankyou-title">We Got It! Expect a Call Within 24 Hours.</h1>
+
+    <p class="thankyou-body">
+      One of our local Denver buyers will review your property and reach out with a fair,
+      no-obligation cash offer. No repairs needed. No agent fees. Just a straightforward offer
+      on your terms.
+    </p>
+
+    <div class="thankyou-cta">
+      <p>Need to talk sooner? We're ready now.</p>
+      <a href="tel:+17205550100" class="btn btn--primary btn--large">
+        📞 Call Us: (720) 555-0100
+      </a>
+    </div>
+
+    <div class="thankyou-share">
+      <p>Know someone else who needs to sell fast?</p>
+      <button class="copy-link-btn" id="copy-link">
+        📋 Copy our link to share
+      </button>
+    </div>
+
+    <div class="thankyou-back">
+      <a href="/">← Back to Mile High Quick Homes</a>
+    </div>
+
+  </div>
+
+  <script>
+    var copyBtn = document.getElementById('copy-link');
+    if (copyBtn && navigator.clipboard) {
+      copyBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText('https://www.milehighquickhomes.com/').then(function() {
+          copyBtn.textContent = '✓ Link copied!';
+          setTimeout(function() { copyBtn.textContent = '📋 Copy our link to share'; }, 2500);
+        });
+      });
+    } else if (copyBtn) {
+      copyBtn.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
