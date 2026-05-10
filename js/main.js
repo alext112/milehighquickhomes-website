@@ -82,48 +82,19 @@ function initFaqAccordion() {
 }
 
 /* ============================================================
-   FORM SUBMISSION WITH ERROR HANDLING
+   FORM SUBMISSION — loading state only, native submit handles redirect
    ============================================================ */
 function initForms() {
   var forms = document.querySelectorAll('form[data-netlify]');
 
   forms.forEach(function(form) {
     var submitBtn  = form.querySelector('[type="submit"]');
-    var errorEl    = form.querySelector('.form-error');
     var defaultTxt = submitBtn ? submitBtn.textContent : 'Submit';
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
+    form.addEventListener('submit', function() {
       if (submitBtn) {
         submitBtn.disabled    = true;
         submitBtn.textContent = 'Sending…';
-      }
-      if (errorEl) errorEl.hidden = true;
-
-      var formData = new FormData(form);
-      var body     = new URLSearchParams(formData).toString();
-
-      try {
-        var response = await fetch('/', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body:    body
-        });
-
-        if (response.ok) {
-          window.location.href = '/thank-you.html';
-        } else {
-          throw new Error('Server responded with ' + response.status);
-        }
-      } catch (_err) {
-        if (submitBtn) {
-          submitBtn.disabled    = false;
-          submitBtn.textContent = defaultTxt;
-        }
-        if (errorEl) {
-          errorEl.hidden = false;
-        }
       }
     });
   });
