@@ -1084,3 +1084,17 @@ body {
 .footer__disclaimer {
   font-style: italic;
 }
+
+.footer__bottom a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: underline;
+}
+
+.footer__bottom a:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.form-checkbox-label a {
+  color: inherit;
+  text-decoration: underline;
+}
